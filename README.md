@@ -1,7 +1,7 @@
 
 Este projeto foi adaptado a necessidade de criar um sistema de agendamento.
-Adaptei e fiz rodar alguma funcionalidades solicitadas no teste da funceme.
-Algumas técnicas e boas práticas foram adptadas de projetos web de sucesso.
+Adaptei e fiz rodar algumas funcionalidades solicitadas no teste da funceme.
+Também algumas técnicas e boas práticas foram adptadas de projetos web de sucesso.
 Cumprindo assim a necessidade e agilidade.
 
 Ele roda com : Laravel e  VueJs
