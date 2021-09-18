@@ -24,19 +24,16 @@ III -  Feito isso rode
 
 O Serviço rodará na porta 8000: localhost:8000/
 
-Usuário e senha do seed iniciais: 
+Usuário e senha do seed iniciais mas pode trocar 
 
 - marcuspaulo@funceme.teste
-- password
+- teste
 
 IV - No fronteend
 
 - cd frontend
 - npm install
 - npm run dev
-
-O Serviço rodará na porta 8080: localhost:8080/
-
 
 Obs: Como em modelos usei também algumas libs(portanto se der problema só rodar):
 
@@ -59,3 +56,22 @@ $ php artisan make:seeder UserSeeder
 $ php artisan db:seed
 
 Bem tentei ser rápido com o melhor e simples para agilizar. 
+
+
+
+Para rodar dentro do docker (dentro do backend)
+-----------------------------------------------------------------
+1 - Rodas os comandos dentro do backend se precisar reistale o composer
+composer install --ignore-platform-reqs
+
+
+2 - Crie o contener:
+docker-compose up -d
+ou
+docker-compose up --build (este aqui é pra forçar)
+
+3 - Inicie o docker
+docker-composer exec app bash
+
+4 - Starte o projeto(os arquivos de configurações estão no docker-compose.yaml para mudar as portas)
+php artisan serve --host=0.0.0.0

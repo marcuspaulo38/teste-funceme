@@ -13,19 +13,19 @@ class UserSeeder extends Seeder
         $user = User::insert([
             'name' => 'Marcus Paulo',
             'email' => 'marcuspaulo@funceme.teste',
-            'password' => bcrypt('password'),
+            'password' => bcrypt('teste'),
         ]);
 
         $user = User::insert([
             'name' => 'Robson Franklin',
             'email' => 'robson@funceme.br',
-            'password' => bcrypt('password'),
+            'password' => bcrypt('teste'),
         ]);
 
         $user = User::insert([
             'name' => 'Marcelo Rodrigues',
             'email' => 'marcelo@funceme.br',
-            'password' => bcrypt('password'),
+            'password' => bcrypt('teste'),
         ]);
 
     }

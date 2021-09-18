@@ -1,0 +1,50 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginxs_
+    restart: always
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www/html
+      - ./nginxs_/default.conf:/etc/nginxs_/conf.d/default.conf
+    depends_on:
+      - php
+      - mysql
+    networks:
+      - laravel
+
+  mysql:
+    image: mysql:5.7.22
+    container_name: mysql__
+    restart: unless-stopped
+    tty: true
+    ports:
+     - "3307:3306"
+    environment:
+      MYSQL_DATABASE: funcemedev
+      MYSQL_ROOT_PASSWORD: funcemedev
+      # MYSQL_USER: root
+      # MYSQL_PASSWORD:
+      MYSQL_ROOT_PASSWORD: funcemedev
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - laravel
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php__
+    restart: always
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "8001:8000"
+    networks:
+      - laravel
+
+networks:
+  laravel:
